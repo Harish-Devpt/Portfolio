@@ -125,7 +125,7 @@ const Quote = () => {
             loop
             muted
             onError={handleVideoError}
-            src="video.mp4"
+            src="public\video.mp4"
           />
         ) : (
           <motion.div

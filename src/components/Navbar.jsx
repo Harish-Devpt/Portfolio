@@ -94,7 +94,7 @@ const Navbar = ({ onLoaded, onNavigate }) => {
         >
           {/* Logo */}
           <motion.img
-            src="logo.png"
+            src="public\logo.png"
             alt="Logo"
             className="lg:w-[3vw] lg:h-[3vw] md:w-12 md:h-12 w-10 h-10 object-contain cursor-pointer"
             style={{ scale: springScale, x: springX, y: springY }}

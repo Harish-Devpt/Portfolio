@@ -82,7 +82,7 @@ const Landing = ({ startAnimations, onNavigate }) => {
                     animate={{ scale: imgHover ? 1.2 : 1 }}
                     transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
                     className='w-full h-full object-cover'
-                    src="pic.png"
+                    src="public\pic.png"
                     alt=""
                   />
                 </motion.div>
