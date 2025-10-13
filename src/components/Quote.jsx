@@ -176,7 +176,7 @@ const Quote = () => {
               whiteSpace: "pre-line",
               lineHeight,
               fontFamily: "'Newsreader', serif",
-              fontWeight: 700,
+              fontWeight: 500,
               letterSpacing,
               marginBottom: isMobile ? "1.2rem" : "2rem",
             }}
