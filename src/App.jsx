@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Helmet } from "react-helmet"; // ✅ Added Helmet import
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
@@ -28,7 +29,7 @@ const App = () => {
   const scrollRef = useRef(null);
   const locoScrollInstance = useRef(null);
 
-  // Track screen size for responsive adjustments (still useful for any logic)
+  // Track screen size
   useEffect(() => {
     const handleResize = () => {
       setScreenSize({
@@ -36,7 +37,6 @@ const App = () => {
         height: window.innerHeight,
       });
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -50,7 +50,7 @@ const App = () => {
     document.head.appendChild(fontLink);
   }, []);
 
-  // Audio play/pause
+  // Audio logic
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.muted = isMuted;
@@ -77,7 +77,7 @@ const App = () => {
     }
   };
 
-  // Locomotive Scroll initialization after loading
+  // Locomotive Scroll setup
   useEffect(() => {
     if (!showLoading && scrollRef.current) {
       locoScrollInstance.current = new LocomotiveScroll({
@@ -113,7 +113,9 @@ const App = () => {
     const target = document.querySelector(selector);
     if (!target) return false;
     const navbarEl = document.getElementById("navbar");
-    const navbarOffset = navbarEl ? Math.ceil(navbarEl.getBoundingClientRect().height + 16) : 140;
+    const navbarOffset = navbarEl
+      ? Math.ceil(navbarEl.getBoundingClientRect().height + 16)
+      : 140;
     try {
       if (locoScrollInstance.current) {
         locoScrollInstance.current.update();
@@ -132,13 +134,20 @@ const App = () => {
         });
         return true;
       }
-      // Fallback smooth scroll without Locomotive
+
+      // Fallback smooth scroll
       if (scrollRef.current) {
         const container = scrollRef.current;
-        const targetY = target.getBoundingClientRect().top + container.scrollTop - navbarOffset;
+        const targetY =
+          target.getBoundingClientRect().top +
+          container.scrollTop -
+          navbarOffset;
         container.scrollTo({ top: targetY, behavior: "smooth" });
       } else {
-        const absoluteTop = target.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
+        const absoluteTop =
+          target.getBoundingClientRect().top +
+          window.pageYOffset -
+          navbarOffset;
         window.scrollTo({ top: absoluteTop, behavior: "smooth" });
       }
       return true;
@@ -149,6 +158,16 @@ const App = () => {
 
   return (
     <>
+      {/* ✅ Helmet Added Here */}
+      <Helmet>
+        <title>It's__Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Harish, a creative frontend developer specializing in React and modern web experiences."
+        />
+        <meta name="theme-color" content="#0D0D0D" />
+      </Helmet>
+
       {showLoading && (
         <div className="fixed inset-0 w-screen h-screen bg-[#0D0D0D] z-[9999999] flex items-center justify-center">
           <Loading onFinish={handleLoadingFinish} />
@@ -164,7 +183,10 @@ const App = () => {
           <Navbar onLoaded={handleNavbarLoaded} onNavigate={handleNavigate} />
 
           <main>
-            <Landing startAnimations={startLandingAnimations} onNavigate={handleNavigate} />
+            <Landing
+              startAnimations={startLandingAnimations}
+              onNavigate={handleNavigate}
+            />
             <Marquee />
             <About />
             <Play />
@@ -181,7 +203,7 @@ const App = () => {
             Your browser does not support the audio element.
           </audio>
 
-          {/* Mute / Sound control (tailwind responsive + arbitrary values) */}
+          {/* Mute / Sound Control */}
           <div
             onClick={toggleMute}
             tabIndex={0}
@@ -194,14 +216,14 @@ const App = () => {
               }
             }}
             className={
-              // mobile: bottom 150px, right -30px, text 40px
-              // md: bottom 400px, right -42px, text 46px
-              // lg: bottom ~18vw (approx via rem fallback), right -1vw, text 2vw
               "fixed right-[-30px] bottom-[150px] md:bottom-[400px] md:right-[-42px] lg:bottom-[18vw] lg:right-[-1vw] z-[2147483647] cursor-pointer select-none " +
               'font-[DM\\ Serif\\ Text] whitespace-nowrap -rotate-90 text-[#383821] font-bold' +
               "text-[40px] md:text-[46px] lg:text-[2vw]"
             }
-            style={{ userSelect: "none", WebkitTapHighlightColor: "transparent" }}
+            style={{
+              userSelect: "none",
+              WebkitTapHighlightColor: "transparent",
+            }}
           >
             {isPlaying ? (
               <>
