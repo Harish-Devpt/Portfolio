@@ -9,4 +9,4 @@ Tech Stack I use is
 - **Styling:** TailwindCSS
 - **Animations:** GSAP / Framer Motion
 - **Deployment:** Vercel
-- 
+  
