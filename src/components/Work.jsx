@@ -165,14 +165,14 @@ function Work() {
                                         animate={Hovered1 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=1974&auto=format&fit=crop"
+                                        src="src\assets\Project-1.png"
                                         alt=""
                                     />
                                 </div>
                                 {/* Mobile text animation */}
-                                <MobileTextAnimation text="Hello" isHovered={Hovered1} />
+                                <MobileTextAnimation text="the Collosan Lab " isHovered={Hovered1} />
                             </motion.div>
-                            <GitHubLink url="https://github.com/your-repo-1" />
+                            <GitHubLink url="https://github.com/Harish-Devpt/Colossal-Lab_UpGrade" />
                         </div>
 
                         {/* Container 2 */}
