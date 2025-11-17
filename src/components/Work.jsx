@@ -166,7 +166,7 @@ function Work() {
                                         animate={Hovered1 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-1.png"
+                                        src="public\Project-1.png"
                                         alt=""
                                     />
                                 </div>
@@ -196,7 +196,7 @@ function Work() {
                                         animate={Hovered2 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-2.png"
+                                        src="public\Project-2.png"
                                         alt=""
                                     />
                                 </div>
@@ -297,7 +297,7 @@ function Work() {
                                         animate={Hovered3 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-1.png"
+                                        src="public\Project-1.png"
                                         alt=""
                                     />
                                 </div>
@@ -327,7 +327,7 @@ function Work() {
                                         animate={Hovered4 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-2.png"
+                                        src="public\Project-2.png"
                                         alt=""
                                     />
                                 </div>
