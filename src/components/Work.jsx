@@ -380,7 +380,7 @@ function Work() {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
                     </motion.p>
 
-                    {/* Tablet-specific text animations for row 2 - matching desktop positioning with black text and tight tracking */}
+                    {/* Tablet-specific text animations for row 2~ - matching desktop positioning with black text and tight tracking */}
                     <TabletTextAnimation
                         text="The Colossan Lab"
                         isHovered={Hovered3}
