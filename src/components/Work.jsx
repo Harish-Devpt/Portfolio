@@ -4,17 +4,17 @@ import React, { useEffect, useState } from 'react'
 function Work() {
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
-    
+
     // Check if device is mobile or tablet
     useEffect(() => {
         const checkDevice = () => {
             setIsMobile(window.innerWidth < 768);
             setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
         };
-        
+
         checkDevice();
         window.addEventListener('resize', checkDevice);
-        
+
         return () => window.removeEventListener('resize', checkDevice);
     }, []);
 
@@ -106,7 +106,7 @@ function Work() {
                 animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className="absolute z-50 pointer-events-none"
-                style={{ 
+                style={{
                     display: isTablet ? 'flex' : 'none',
                     top: position.top,
                     left: position.left,
@@ -123,7 +123,7 @@ function Work() {
                         animate={isHovered ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }}
                         transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}
                         className="font-bold"
-                        style={{ 
+                        style={{
                             color: '#000000',
                             letterSpacing: '-0.10em',
                         }}
@@ -137,7 +137,7 @@ function Work() {
 
     return (
         <div id="work" className="w-full md:py-20 py-14 bg-[#F1F1F1] text-black rounded-[2.3vw]" data-scroll data-scroll-section data-scroll-speed="1.2">
-            <div 
+            <div
                 className="w-full md:px-20 px-6"
                 style={isTablet ? { paddingLeft: '3vw', paddingRight: '3vw' } : {}}
             >
@@ -147,10 +147,11 @@ function Work() {
                 <div className="px-1 relative">
                     <div className="cards w-full flex flex-col md:flex-row gap-10 md:gap-15 pt-12 md:pt-20 relative">
                         {/* Container 1 */}
-                        <div className="flex flex-col items-center"
-                          style={{ marginLeft: '-1vw' }}>
-                            
+                        <div className="flex flex-col items-center cursor-pointer"
+                            style={{ marginLeft: '-1vw' }}>
+
                             <motion.div
+                                onClick={() => window.open("https://colossal-lab-up-grade.vercel.app/", "_blank")}
                                 onMouseEnter={() => setHovered1(true)}
                                 onMouseLeave={() => setHovered1(false)}
                                 className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10"
@@ -173,11 +174,14 @@ function Work() {
                                 <MobileTextAnimation text="the Collosan Lab " isHovered={Hovered1} />
                             </motion.div>
                             <GitHubLink url="https://github.com/Harish-Devpt/Colossal-Lab_UpGrade" />
+
+
                         </div>
 
                         {/* Container 2 */}
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center cursor-pointer">
                             <motion.div
+                                onClick={() => window.open("https://chilli-mash-co-fiery-flavors-sustai.vercel.app/", "_blank")}
                                 onMouseEnter={() => setHovered2(true)}
                                 onMouseLeave={() => setHovered2(false)}
                                 className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10"
@@ -192,49 +196,63 @@ function Work() {
                                         animate={Hovered2 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=1974&auto=format&fit=crop"
+                                        src="src\assets\Project-2.png"
                                         alt=""
                                     />
                                 </div>
                                 {/* Mobile text animation */}
-                                <MobileTextAnimation text="World" isHovered={Hovered2} />
+                                <MobileTextAnimation text="Chilli Mash Co." isHovered={Hovered2} />
                             </motion.div>
-                            <GitHubLink url="https://github.com/your-repo-2" />
+                            <GitHubLink url="https://github.com/Harish-Devpt/Chilli-Mash-Co.---Fiery-Flavors-Sustainable-Heat" />
                         </div>
                     </div>
 
                     {/* Text Animations for row 1 (Desktop only) */}
-                    <motion.h1 
-                        initial={{ y: "-20%", opacity: 0 }} 
-                        animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }} 
-                        transition={{ ease: "easeOut", duration: 0.5 }} 
-                        className="hidden lg:flex absolute top-[5vw] right-[33vw] gap-[1vw] text-[14vw] -tracking-[1.8vw] z-50 pointer-events-none"
+                    <motion.h1
+                        initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[3vw] right-[18vw] gap-[1.3vw] text-[12vw] -tracking-[1.8vw] z-50 pointer-events-none text-green-600"
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}
                     >
-                        {"Hello".split("").map((event, index) => (
+                        {"Colossan Lab".split("").map((event, index) => (
                             <motion.span key={index} initial={{ y: "30%", opacity: 0 }} animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }} transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}>
                                 {event}
                             </motion.span>
                         ))}
                     </motion.h1>
-                    <motion.h1 
-                        initial={{ y: "-20%", opacity: 0 }} 
-                        animate={Hovered2 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }} 
-                        transition={{ ease: "easeOut", duration: 0.6, staggerChildren: 0.05 }} 
-                        className="hidden lg:flex absolute top-[5vw] right-[31vw] gap-[1vw] text-[14vw] -tracking-[1.9vw] z-50 pointer-events-none"
+                    <motion.p initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[13.8vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
+                        style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                    </motion.p>
+                    <motion.h1
+                        initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered2 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.6, staggerChildren: 0.05 }}
+                        className="hidden lg:flex absolute top-[3vw] right-[12vw] gap-[1.3vw] text-[12vw] -tracking-[1.8vw] z-50 pointer-events-none text-red-500"
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}
                     >
-                        {"World".split("").map((event, index) => (
+                        {"Chilli Mash Co.".split("").map((event, index) => (
                             <motion.span key={index} initial={{ y: "30%", opacity: 0 }} animate={Hovered2 ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }} transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}>
                                 {event}
                             </motion.span>
                         ))}
                     </motion.h1>
+                     <motion.p initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered2 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[11vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
+                        style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                    </motion.p>
 
                     {/* Tablet-specific text animations for row 1 - matching desktop positioning with black text and tight tracking */}
-                    <TabletTextAnimation 
-                        text="Hello" 
-                        isHovered={Hovered1} 
+                    <TabletTextAnimation
+                        text="The Colossan Lab"
+                        isHovered={Hovered1}
                         position={{
                             top: '10vw',  // Moved down from 5vw
                             right: '33vw',
@@ -243,9 +261,9 @@ function Work() {
                             letterSpacing: '-1.8vw'
                         }}
                     />
-                    <TabletTextAnimation 
-                        text="World" 
-                        isHovered={Hovered2} 
+                    <TabletTextAnimation
+                        text="World"
+                        isHovered={Hovered2}
                         position={{
                             top: '10vw',  // Moved down from 5vw
                             right: '31vw',
@@ -260,94 +278,112 @@ function Work() {
                 <div className="px-1 relative">
                     <div className="cards w-full flex flex-col md:flex-row gap-10 md:gap-15 pt-12 md:pt-20 relative">
                         {/* Container 3 */}
-                        <div className="flex flex-col items-center"
-                        style={{ marginLeft: '-1vw' }}>
-                            <motion.div 
-                                onMouseEnter={() => setHovered3(true)} 
-                                onMouseLeave={() => setHovered3(false)} 
-                                className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10" 
+                        <div className="flex flex-col items-center cursor-pointer"
+                            style={{ marginLeft: '-1vw' }}>
+
+                            <motion.div
+                                onClick={() => window.open("https://colossal-lab-up-grade.vercel.app/", "_blank")}
+                                onMouseEnter={() => setHovered3(true)}
+                                onMouseLeave={() => setHovered3(false)}
+                                className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10"
                                 style={isTablet ? { width: '42vw', height: '28vw' } : {}}
-                                initial={{ scale: 1 }} 
-                                animate={Hovered3 ? { scale: 0.97 } : { scale: 1 }} 
-                                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                                initial={{ scale: 1 }}
+                                animate={Hovered1 ? { scale: 0.97 } : { scale: 1 }}
+                                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                             >
-                                <div className="absolute inset-0 overflow-hidden rounded-4xl">
-                                    <motion.img 
-                                        initial={{ scale: 1, filter: "blur(0px)" }} 
-                                        animate={Hovered3 ? { scale: 1.05, filter: "blur(8px)" } : { scale: 1, filter: "blur(0px)" }} 
-                                        transition={{ duration: 0.6, ease: "easeOut" }} 
-                                        className="w-full h-full object-cover" 
-                                        src="https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=1974&auto=format&fit=crop" 
-                                        alt="" 
+                                <div className="absolute inset-0 overflow-hidden rounded-4xl z-0">
+                                    <motion.img
+                                        initial={{ scale: 1, filter: 'blur(0px)' }}
+                                        animate={Hovered3 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
+                                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                                        className="w-full h-full object-cover"
+                                        src="src\assets\Project-1.png"
+                                        alt=""
                                     />
                                 </div>
                                 {/* Mobile text animation */}
-                                <MobileTextAnimation text="Hello" isHovered={Hovered3} />
+                                <MobileTextAnimation text="the Collosan Lab " isHovered={Hovered3} />
                             </motion.div>
-                            <GitHubLink url="https://github.com/your-repo-3" />
+                            <GitHubLink url="https://github.com/Harish-Devpt/Colossal-Lab_UpGrade" />
+
+
                         </div>
 
                         {/* Container 4 */}
-                        <div className="flex flex-col items-center">
-                            <motion.div 
-                                onMouseEnter={() => setHovered4(true)} 
-                                onMouseLeave={() => setHovered4(false)} 
-                                className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10" 
+                        <div className="flex flex-col items-center cursor-pointer">
+                            <motion.div
+                                onClick={() => window.open("https://chilli-mash-co-fiery-flavors-sustai.vercel.app/", "_blank")}
+                                onMouseEnter={() => setHovered4(true)}
+                                onMouseLeave={() => setHovered4(false)}
+                                className="container md:w-[45vw] md:h-[30vw] w-full h-[56vw] relative rounded-4xl z-10"
                                 style={isTablet ? { width: '42vw', height: '28vw' } : {}}
-                                initial={{ scale: 1 }} 
-                                animate={Hovered4 ? { scale: 0.97 } : { scale: 1 }} 
-                                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                                initial={{ scale: 1 }}
+                                animate={Hovered4 ? { scale: 0.97 } : { scale: 1 }}
+                                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                             >
-                                <div className="absolute inset-0 overflow-hidden rounded-4xl">
-                                    <motion.img 
-                                        initial={{ scale: 1, filter: "blur(0px)" }} 
-                                        animate={Hovered4 ? { scale: 1.05, filter: "blur(8px)" } : { scale: 1, filter: "blur(0px)" }} 
-                                        transition={{ duration: 0.6, ease: "easeOut" }} 
-                                        className="w-full h-full object-cover" 
-                                        src="https://images.unsplash.com/photo-1559385301-0187cb6eff46?q=80&w=1974&auto=format&fit=crop" 
-                                        alt="" 
+                                <div className="absolute inset-0 overflow-hidden rounded-4xl z-0">
+                                    <motion.img
+                                        initial={{ scale: 1, filter: 'blur(0px)' }}
+                                        animate={Hovered4 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
+                                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                                        className="w-full h-full object-cover"
+                                        src="src\assets\Project-2.png"
+                                        alt=""
                                     />
                                 </div>
                                 {/* Mobile text animation */}
-                                <MobileTextAnimation text="World" isHovered={Hovered4} />
+                                <MobileTextAnimation text="Chilli Mash Co." isHovered={Hovered4} />
                             </motion.div>
-                            <GitHubLink url="https://github.com/your-repo-4" />
+                            <GitHubLink url="https://github.com/Harish-Devpt/Chilli-Mash-Co.---Fiery-Flavors-Sustainable-Heat" />
                         </div>
                     </div>
 
-                    {/* Text animations for row 2 (Desktop only) */}
-                    <motion.h1 
-                        initial={{ y: "-20%", opacity: 0 }} 
-                        animate={Hovered3 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }} 
-                        transition={{ ease: "easeOut", duration: 0.5 }} 
-                        className="hidden lg:flex absolute top-[5vw] right-[33vw] gap-[1vw] text-[14vw] -tracking-[1.8vw] z-50 pointer-events-none"
+                    {/* Text Animations for row 1 (Desktop only) */}
+                    <motion.h1
+                        initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered3 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[3vw] right-[18vw] gap-[1.3vw] text-[12vw] -tracking-[1.8vw] z-50 pointer-events-none text-green-600"
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}
                     >
-                        {"Hello".split("").map((event, index) => (
+                        {"Colossan Lab".split("").map((event, index) => (
                             <motion.span key={index} initial={{ y: "30%", opacity: 0 }} animate={Hovered3 ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }} transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}>
                                 {event}
                             </motion.span>
                         ))}
                     </motion.h1>
-
-                    <motion.h1 
-                        initial={{ y: "-20%", opacity: 0 }} 
-                        animate={Hovered4 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }} 
-                        transition={{ ease: "easeOut", duration: 0.6, staggerChildren: 0.05 }} 
-                        className="hidden lg:flex absolute top-[5vw] right-[31vw] gap-[1vw] text-[14vw] -tracking-[1.9vw] z-50 pointer-events-none"
+                    <motion.p initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered3 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[13.8vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
+                        style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                    </motion.p>
+                    <motion.h1
+                        initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered4 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.6, staggerChildren: 0.05 }}
+                        className="hidden lg:flex absolute top-[3vw] right-[12vw] gap-[1.3vw] text-[12vw] -tracking-[1.8vw] z-50 pointer-events-none text-red-500"
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}
                     >
-                        {"World".split("").map((event, index) => (
+                        {"Chilli Mash Co.".split("").map((event, index) => (
                             <motion.span key={index} initial={{ y: "30%", opacity: 0 }} animate={Hovered4 ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }} transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}>
                                 {event}
                             </motion.span>
                         ))}
                     </motion.h1>
+                     <motion.p initial={{ y: "-20%", opacity: 0 }}
+                        animate={Hovered4 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[11vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
+                        style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                    </motion.p>
 
                     {/* Tablet-specific text animations for row 2 - matching desktop positioning with black text and tight tracking */}
-                    <TabletTextAnimation 
-                        text="Hello" 
-                        isHovered={Hovered3} 
+                    <TabletTextAnimation
+                        text="The Colossan Lab"
+                        isHovered={Hovered3}
                         position={{
                             top: '10vw',  // Moved down from 5vw
                             right: '33vw',
@@ -356,9 +392,9 @@ function Work() {
                             letterSpacing: '-1.8vw'
                         }}
                     />
-                    <TabletTextAnimation 
-                        text="World" 
-                        isHovered={Hovered4} 
+                    <TabletTextAnimation
+                        text="World"
+                        isHovered={Hovered4}
                         position={{
                             top: '10vw',  // Moved down from 5vw
                             right: '31vw',
@@ -371,34 +407,34 @@ function Work() {
 
                 {/* Bottom Button with orange border */}
                 <div className="w-full flex justify-center mt-[6vw] md:mt-[3vw]">
-                    <motion.a 
-                        href="https://github.com/Harish-Devpt?tab=repositories" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        onMouseEnter={() => setButtonHover(true)} 
-                        onMouseLeave={() => setButtonHover(false)} 
-                        animate={buttonHover ? { borderColor: "#ff7300" } : { borderColor: "transparent" }} 
-                        transition={{ duration: 0.6, ease: "easeInOut" }} 
+                    <motion.a
+                        href="https://github.com/Harish-Devpt?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onMouseEnter={() => setButtonHover(true)}
+                        onMouseLeave={() => setButtonHover(false)}
+                        animate={buttonHover ? { borderColor: "#ff7300" } : { borderColor: "transparent" }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="relative flex items-center justify-center gap-6 bg-black text-white px-10 md:px-16 py-5 md:py-6 rounded-full text-base md:text-[1.2vw] font-semibold border-[2px] border-transparent"
                         style={isTablet ? { padding: '4vw 8vw', fontSize: '2vw' } : {}}
                     >
                         Visit all my Projects
-                        <motion.div 
-                            className="flex items-center justify-center w-5 h-5 md:w-[1vw] md:h-[1vw] rounded-full bg-white shadow-md origin-center" 
+                        <motion.div
+                            className="flex items-center justify-center w-5 h-5 md:w-[1vw] md:h-[1vw] rounded-full bg-white shadow-md origin-center"
                             style={isTablet ? { width: '3vw', height: '3vw' } : {}}
-                            animate={buttonHover ? { scale: 1.7 } : { scale: 1 }} 
+                            animate={buttonHover ? { scale: 1.7 } : { scale: 1 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
                         >
-                            <motion.svg 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                stroke="black" 
-                                strokeWidth={2.5} 
-                                className="w-3 h-3 md:w-[0.6vw] md:h-[0.6vw] flex items-center justify-center" 
+                            <motion.svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="black"
+                                strokeWidth={2.5}
+                                className="w-3 h-3 md:w-[0.6vw] md:h-[0.6vw] flex items-center justify-center"
                                 style={isTablet ? { width: '1.5vw', height: '1.5vw' } : {}}
-                                initial={{ opacity: 0, rotate: 0 }} 
-                                animate={buttonHover ? { opacity: 1, rotate: -25, y: 0 } : { opacity: 0, rotate: 0, y: 0 }} 
+                                initial={{ opacity: 0, rotate: 0 }}
+                                animate={buttonHover ? { opacity: 1, rotate: -25, y: 0 } : { opacity: 0, rotate: 0, y: 0 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
