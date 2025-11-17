@@ -166,7 +166,7 @@ function Work() {
                                         animate={Hovered1 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="public\Project-1.png"
+                                        src="src\assets\Project-1.png"
                                         alt=""
                                     />
                                 </div>
@@ -196,7 +196,7 @@ function Work() {
                                         animate={Hovered2 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="public\Project-2.png"
+                                        src="src\assets\Project-2.png"
                                         alt=""
                                     />
                                 </div>
@@ -297,7 +297,7 @@ function Work() {
                                         animate={Hovered3 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="public\Project-1.png"
+                                        src="src\assets\Project-1.png"
                                         alt=""
                                     />
                                 </div>
@@ -327,7 +327,7 @@ function Work() {
                                         animate={Hovered4 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="public\Project-2.png"
+                                        src="src\assets\Project-2.png"
                                         alt=""
                                     />
                                 </div>
@@ -380,7 +380,7 @@ function Work() {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
                     </motion.p>
 
-                    {/* Tablet-specific text animations for row 2~ - matching desktop positioning with black text and tight tracking */}
+                    {/* Tablet-specific text animations for row 2 - matching desktop positioning with black text and tight tracking */}
                     <TabletTextAnimation
                         text="The Colossan Lab"
                         isHovered={Hovered3}
