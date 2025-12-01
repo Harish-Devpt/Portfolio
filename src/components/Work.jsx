@@ -166,12 +166,12 @@ function Work() {
                                         animate={Hovered1 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-1.png"
+                                        src="/Project-1.png"
                                         alt=""
                                     />
                                 </div>
                                 {/* Mobile text animation */}
-                                <MobileTextAnimation text="the Collosan Lab " isHovered={Hovered1} />
+                                <MobileTextAnimation text="the Collosal Lab " isHovered={Hovered1} />
                             </motion.div>
                             <GitHubLink url="https://github.com/Harish-Devpt/Colossal-Lab_UpGrade" />
 
@@ -196,7 +196,7 @@ function Work() {
                                         animate={Hovered2 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-2.png"
+                                        src="/Project-2.png"
                                         alt=""
                                     />
                                 </div>
@@ -212,10 +212,10 @@ function Work() {
                         initial={{ y: "-20%", opacity: 0 }}
                         animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
                         transition={{ ease: "easeOut", duration: 0.5 }}
-                        className="hidden lg:flex absolute top-[3vw] right-[18vw] gap-[1.3vw] text-[12vw] -tracking-[1.8vw] z-50 pointer-events-none text-green-600"
+                        className="hidden lg:flex absolute top-[3vw] right-[23vw] gap-[1.3vw] text-[12vw] -tracking-[2vw] z-50 pointer-events-none text-green-600"
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}
                     >
-                        {"Colossan Lab".split("").map((event, index) => (
+                        {"Colossal Lab".split("").map((event, index) => (
                             <motion.span key={index} initial={{ y: "30%", opacity: 0 }} animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "30%", opacity: 0 }} transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.05 }}>
                                 {event}
                             </motion.span>
@@ -246,7 +246,7 @@ function Work() {
                         transition={{ ease: "easeOut", duration: 0.5 }}
                         className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[11vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
-                        <p>Chilli Mash Co. is a clean and modern front-end mockup for a food/spice brand’s website — built to showcase products, brand story, and a smooth browsing experience. The project aims to present a compelling, minimalistic digital storefront for a brand that values flavor, authenticity, and sustainability.</p>
+                        <p>Chilli Mash Co. is a clean and modern front-end mockup for a food/spice brand’s website built to showcase products, brand story, and a smooth browsing experience. The project aims to present a compelling, minimalistic digital storefront for a brand that values flavor, authenticity, and sustainability.</p>
                     </motion.p>
 
                     {/* Tablet-specific text animations for row 1 - matching desktop positioning with black text and tight tracking */}
@@ -297,7 +297,7 @@ function Work() {
                                         animate={Hovered3 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-1.png"
+                                        src="/Project-1.png"
                                         alt=""
                                     />
                                 </div>
@@ -327,7 +327,7 @@ function Work() {
                                         animate={Hovered4 ? { scale: 1.05, filter: 'blur(8px)' } : { scale: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.6, ease: 'easeOut' }}
                                         className="w-full h-full object-cover"
-                                        src="src\assets\Project-2.png"
+                                        src="/Project-2.png"
                                         alt=""
                                     />
                                 </div>
