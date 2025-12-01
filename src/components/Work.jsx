@@ -224,9 +224,9 @@ function Work() {
                     <motion.p initial={{ y: "-20%", opacity: 0 }}
                         animate={Hovered1 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
                         transition={{ ease: "easeOut", duration: 0.5 }}
-                        className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[13.8vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
+                        className="hidden lg:flex absolute top-[19vw] w-[90vw] right-[1vw] gap-[1vw] text-[2.2vw] leading-[2.2vw] text-center z-50 pointer-events-none text-orange-600 "
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                        <p>Colossal Lab Upgrade is a sleek and minimal web interface crafted using modern frontend technologies. The goal of this project is to create a smooth, fast, and visually clean starting point for building digital experiences. It focuses on performance, simplicity, and a structured development environment making it easy to extend into any real product or creative concept.</p>
                     </motion.p>
                     <motion.h1
                         initial={{ y: "-20%", opacity: 0 }}
@@ -241,12 +241,12 @@ function Work() {
                             </motion.span>
                         ))}
                     </motion.h1>
-                     <motion.p initial={{ y: "-20%", opacity: 0 }}
+                    <motion.p initial={{ y: "-20%", opacity: 0 }}
                         animate={Hovered2 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
                         transition={{ ease: "easeOut", duration: 0.5 }}
                         className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[11vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
                         style={{ display: !isMobile && !isTablet ? 'flex' : 'none' }}>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quidem voluptates nesciunt, nam repudiandae! Autem nemo delectus error in, eos impedit dicta unde illo non, quibusdam beatae, necessitatibus libero?</p>
+                        <p>Chilli Mash Co. is a clean and modern front-end mockup for a food/spice brand’s website — built to showcase products, brand story, and a smooth browsing experience. The project aims to present a compelling, minimalistic digital storefront for a brand that values flavor, authenticity, and sustainability.</p>
                     </motion.p>
 
                     {/* Tablet-specific text animations for row 1 - matching desktop positioning with black text and tight tracking */}
@@ -372,7 +372,7 @@ function Work() {
                             </motion.span>
                         ))}
                     </motion.h1>
-                     <motion.p initial={{ y: "-20%", opacity: 0 }}
+                    <motion.p initial={{ y: "-20%", opacity: 0 }}
                         animate={Hovered4 ? { y: 0, opacity: 1 } : { y: "-20%", opacity: 0 }}
                         transition={{ ease: "easeOut", duration: 0.5 }}
                         className="hidden lg:flex absolute top-[19vw] w-[70vw] right-[11vw] gap-[1vw] text-[2.2vw] leading-[2vw] text-center z-50 pointer-events-none text-orange-600 "
